@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>G.A. table/form exercise</title>
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <form action="/register" method="GET">
+        <table border cellspacing="0" cellpadding="6">
+            <tr>
+                <th>Control Type</th>
+                <th>Data</th>
+                <th>Control</th>
+            </tr>
+            <tr>
+                <td>Text box</td>
+                <td>
+                    <label for="name">Name:</label>
+                </td>
+                <td>
+                    <input type="text" name="Name" placeholder="Enter name" id="name"> </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <label for="Password">Password:</label>
+                </td>
+                <td>
+                    <input type="Password" name="Password" id="Password">
+                </td>
+            </tr>
+            <tr>
+                <td>Text area</td>
+                <td>
+                    <label for="comment">Address:</label>
+                </td>
+                <td>
+                    <textarea name="comment" rows="5" style="resize:none;" id="comment" placeholder="Enter address here..."></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Drop down list</td>
+                <td>Area:</td>
+                <td>
+                    <select name="area" size="1">
+                        <option value="vake">vake</option>
+                        <option value="saburato">saburato</option>
+                        <option value="center" selected>center</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Check box</td>
+                <td>Hobbies:</td>
+                <td>
+                    <input type="checkbox" name="Sport" value="1">Sport
+                    <br>
+                    <input type="checkbox" name="Reading" value="2">Reading
+                    <br>
+                    <input type="checkbox" name="TV" value="3">T.V.
+                    <br>
+                    <input type="checkbox" name="Internet" value="4">Internet
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Radio Buttons</td>
+                <td>Gender:</td>
+                <td>
+                    <fieldset>
+                        <legend>Gender Selction:</legend>
+                        <input type="radio" name="gender"> Male
+                        <br>
+                        <input type="radio" name="gender"> Female
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>File upload</td>
+                <td>Your image:</td>
+                <td>
+                    <input type="file" id="myFile">
+                </td>
+            </tr>
+            <tr>
+                <td>Buttons</td>
+                <td>Actions:</td>
+                <td>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                    <button type="button">Button</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
