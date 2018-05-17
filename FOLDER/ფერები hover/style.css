@@ -1,0 +1,57 @@
+div {
+    display: inline-block;
+    margin: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    border: 20px;
+    border-style: dashed;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+    padding: 10px;
+    margin-left: 10px;
+
+}
+
+
+#red {
+    background-color: red;
+}
+
+#square {
+    display: block;
+    background-color: gray;
+    width: 250px;
+    height: 250px;
+    margin-left: 360px;
+    border-radius: 0px;
+}
+
+#green:hover ~ #square{ 
+    background-color: green;
+}
+
+#blue:hover ~ #square{ 
+    background-color:blue;
+}
+#yellow:hover ~ #square{ 
+    background-color:yellow;
+}
+#red:hover ~ #square{ 
+    background-color:red;
+}
+
+
+
+
+

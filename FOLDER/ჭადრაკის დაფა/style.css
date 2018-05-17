@@ -1,0 +1,29 @@
+#border {
+    margin: auto;
+    width: 480px;
+    border: 2px solid black;
+}
+
+#row1 div, #row2 div, #row3 div, #row4 div, #row5 div, #row6 div, #row7 div, #row8 div {
+    height: 60px;
+    width: 60px;
+    background-color:white;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+    font-size: 45px;
+}
+
+#row1 div:nth-child(2n),
+#row3 div:nth-child(2n),
+#row5 div:nth-child(2n),
+#row7 div:nth-child(2n){
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#row2 div:nth-child(2n+1),
+#row4 div:nth-child(2n+1),
+#row6 div:nth-child(2n+1),
+#row8 div:nth-child(2n+1){
+    background-color: rgba(0, 0, 0, 0.5);
+}
