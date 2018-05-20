@@ -1,0 +1,59 @@
+.Div{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    display: inline-block;
+
+}
+.inDiv{
+    width: 280px;
+    height: 280px;
+    background-color: lightgrey;
+    display: inline-block;
+    position: relative;
+}
+
+#in1{
+    width: 140px;
+    height: 140px;
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#in2{
+    width: 140px;
+    height: 140px;
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#in2a{
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#in3a{
+    width: 140px;
+    height: 140px;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#in3b{
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
