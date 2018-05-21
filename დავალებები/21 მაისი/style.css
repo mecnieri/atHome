@@ -10,7 +10,7 @@ nav{
 }
 
 section{
-    flex:1;
+    flex:2;
     order:2;
     display: block;
     position: t;
@@ -25,4 +25,5 @@ aside{
 footer{
     background: green;
     height: 100px;
+    color:white
 }
