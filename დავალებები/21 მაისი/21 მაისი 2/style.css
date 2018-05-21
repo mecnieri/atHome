@@ -1,4 +1,17 @@
+figure{
+    float: left;
+    text-align: center;
+    border: 1px solid gray;
+}
+
 img{
-    widows: 200px;
-    
+    height: 150px;
+}
+
+figure:hover{
+    border: 2px solid black;
+}
+
+img:active{
+height: 400px;
 }
