@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    position: relative;
+
+}
+
+nav{
+    flex:1;
+    order:1;
+}
+
+section{
+    flex:1;
+    order:2;
+    display: block;
+    position: t;
+
+}
+
+aside{
+    flex:1;
+    order:3;
+}
+
+footer{
+    background: green;
+    height: 100px;
+}
