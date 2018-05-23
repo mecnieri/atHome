@@ -7,9 +7,11 @@
 
 header {
     background-color: #a0da96;
-    padding: 20px;
     text-align: center;
     color: #fff;
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 nav {
@@ -31,10 +33,14 @@ nav a {
         color: black;
     } 
 
-.column {
+/* .column {
     width: 33.33%;
     float: left;
     padding: 15px;
+} */
+main{
+    display: grid;
+     grid-template-columns: 1fr 2fr 1fr;
 }
 
 footer {
@@ -44,3 +50,9 @@ footer {
     clear: both;
 }
 
+.Hdiv1{
+    background-color: rebeccapurple;
+}
+.Hdiv2{
+    background-color: royalblue;
+}

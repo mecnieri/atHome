@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 99.7%;
+    height: 200px;
+    border: 2px solid black;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+main div{
+    height: 200px;
+    border: 2px solid black;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+main :nth-child(2){
+border-left: 0px;
+border-right: 0px;
+}
+
+footer {
+    width: 99.7%;
+    height: 200px;
+    border: 2px solid black;
+    clear: both;
+}
