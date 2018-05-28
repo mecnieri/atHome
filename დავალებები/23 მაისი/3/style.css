@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 header {
@@ -30,7 +30,7 @@ border-right: 0px;
 
 footer {
     width: 99.7%;
-    height: 200px;
+    height: 100px;
     border: 2px solid black;
     clear: both;
 }
