@@ -1,3 +1,7 @@
+:root {
+    --border: 1px solid #e5e5e5;
+}
+
 html {
     box-sizing: border-box;
     height: 100%;
@@ -22,19 +26,13 @@ h1 {
     padding: 10px;
 }
 
-nav {
-    border: 1px solid #e5e5e5;
-    width: 98%;
-    margin: 0 auto 0 auto;
-}
-
 .mobileDiv {
-    border: 1px solid #e5e5e5;
+    /* border: 1px solid #e5e5e5; */
     text-align: right;
     padding: 10px;
     width: 100%;
-    border-bottom: 0;
-    border-top: 0;
+    /* border-bottom: 0;
+    border-top: 0; */
 }
 
 .search {
@@ -43,13 +41,13 @@ nav {
     grid-template-columns: 9fr 1fr;
     height: 40px;
     font-size: 15px;
-    border: 1px solid #e5e5e5;
-    border-bottom: 0;
+    /* border: 1px solid #e5e5e5;
+    border-bottom: 0; */
 }
 
 input {
     padding: 12px;
-    border: 0;
+    /* border: 0; */
 }
 
 .nightStar {
@@ -57,7 +55,7 @@ input {
     text-transform: uppercase;
     color: red;
     font-weight: 100;
-    border-top: 1px solid #e5e5e5;
+    /* border-top: 1px solid #e5e5e5; */
     padding: 10px;
     margin: 10px auto 0 auto;
     width: 100%;
@@ -66,13 +64,13 @@ input {
 main {
     width: 98%;
     margin: 0 auto;
-    border: 1px solid #e5e5e5;
-    border-top: 0;
+    /* border: 1px solid #e5e5e5;
+    border-top: 0; */
     padding: 15px;
 }
 
 article {
-    border: 1px solid #e5e5e5;
+    /* border: 1px solid #e5e5e5; */
     padding: 30px;
 }
 
@@ -82,7 +80,7 @@ article img {
 }
 
 .readMore {
-    border: 1px solid #e5e5e5;
+    /* border: 1px solid #e5e5e5; */
     color: #e5e5e5;
     text-transform: uppercase;
     font-weight: 300;
@@ -96,25 +94,33 @@ article img {
     height: 50px;
     margin: 20px;
 }
- 
-.commentIcon{
-    border-left: 1px solid #e5e5e5;
 
-}
+/* .commentIcon {
+    border-left: 1px solid #e5e5e5;
+} */
 
 @media screen and (min-width:481px) and (max-width:640px) {
+    .topnav {
+        display: none;
+    }
     h1 {
         text-align: left;
     }
 }
 
 @media screen and (min-width:641px) and (max-width:840px) {
+    .topnav {
+        display: none;
+    }
     h1 {
         text-align: left;
     }
 }
 
 @media screen and (min-width:841px) {
+    .topnav {
+        display: none;
+    }
     h1 {
         text-align: left;
     }
@@ -123,5 +129,32 @@ article img {
 @media screen and (min-width:1100px) {
     h1 {
         text-align: left;
+    }
+    .mobileDiv {
+        display: none;
+    }
+    .topnav {
+        display: block;
+    }
+    .topnav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .topnav li {
+        /* border: 1px solid #e5e5e5; */
+        border: var(--border);
+        padding: 20px;
+        list-style-type: none;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .topnav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .topnav a:hover {
+        color: red;
     }
 }
