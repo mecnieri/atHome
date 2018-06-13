@@ -18,13 +18,7 @@ html {
     padding: 0;
 }
 
-h1 {
-    color: red;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 900;
-    padding: 10px;
-}
+
 
 .mobileDiv {
     /* border: 1px solid #e5e5e5; */
