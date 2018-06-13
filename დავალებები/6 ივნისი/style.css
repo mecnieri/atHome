@@ -127,7 +127,12 @@ article img {
 }
 
 @media screen and (min-width:1100px) {
-    h1 {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: repeat(3, minmax(200px, auto))
+    }
+     h1 {
         text-align: left;
     }
     .mobileDiv {
@@ -135,6 +140,8 @@ article img {
     }
     .topnav {
         display: block;
+        grid-column: 1 / -1;
+
     }
     .topnav ul {
         display: flex;
