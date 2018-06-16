@@ -26,14 +26,18 @@ html {
         grid-gap: 0px;
         max-width: 98%;
         margin: 0 auto;
-        grid-template-areas: "header header header" "topNav topNav topNav" "lastUpdate star search" "leftNav main reklama" "footer footer footer"
+        /* grid-template-areas:
+        "header header header" 
+        "topNav topNav topNav"
+        "lastUpdate star search"
+        "leftNav main reklama"
+        "footer footer footer" */
     }
     .container>* {
         border: 1px solid #e5e5e5;
         font-family: Arial, Helvetica, sans-serif;
     }
     header {
-        grid-area: header;
         color: red;
         text-transform: uppercase;
         font-weight: 900;
@@ -41,10 +45,11 @@ html {
         background-color: #fff;
         border: 0 !important;
         letter-spacing: -3px;
+        grid-column: 1 / -1;
     }
     .topNav {
-        grid-area: topNav;
         height: 58px;
+        grid-column: 1 / -1;
     }
     .topNav ul {
         list-style: none;
@@ -63,13 +68,11 @@ html {
         color: red;
     }
     .lastUpdate {
-        grid-area: lastUpdate;
         font-size: 11px;
         padding-left: 14px;
         line-height: 58px;
     }
     .star {
-        grid-area: star;
         color: red;
         text-transform: uppercase;
         font-size: 15pt;
@@ -77,29 +80,29 @@ html {
         text-align: center;
         line-height: 58px;
     }
-    .search {
-        grid-area: search;
-    }
+    .search {}
     input {
         height: 58px;
         border: 0;
         padding: 20px;
     }
     .leftNav {
-        grid-area: leftNav;
         background-color: black;
         color: #fff;
         text-align: center;
         text-transform: uppercase;
-        padding: 15px;
         font-size: 14px;
         font-weight: 700;
+        padding-top: 20px;
+    }
+    .black {
+        padding: 20px;
     }
     .leftNav li {
         color: #e5e5e5;
         text-align: left;
         width: 200px;
-        padding: 15px;
+        padding: 15px 0;
         list-style-type: none;
         text-transform: none;
         border-bottom: 1px solid #e5e5e5;
@@ -115,15 +118,15 @@ html {
         text-decoration: none;
     }
     main {
-        grid-area: main;
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-auto-rows: minmax(350px, auto);
+        grid-auto-rows: minmax(350px, 350px);
     }
     .mtavari {
         grid-row: 1 / 3;
         border: 1px solid #e5e5e5;
         padding: 25px;
+        position: relative;
     }
     .mtavari a {
         text-decoration: none;
@@ -139,6 +142,18 @@ html {
     .mtavari p {
         font-size: 18px;
         color: #8e8e8e;
+    }
+    .bottom {
+        width: 100%;
+        background-color: #f9fafb;
+        position: absolute;
+        border-top: 1px solid #e5e5e5;
+        bottom: 0;
+        left: 0;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 80px;
+        text-align: center;
     }
     .meore {
         border-bottom: 1px solid #e5e5e5;
@@ -165,7 +180,7 @@ html {
         text-align: center;
         width: 160px;
         margin: 46px 0 0 15px;
-     }
+    }
     .text {
         border-right: 1px solid #e5e5e5;
         color: grey;
@@ -184,8 +199,39 @@ html {
         grid-area: reklama;
     }
     .bottomLeftRandom {
-        grid-area: bottomLeftRandom;
+        background-color: #fff;
+        padding: 20px;
+        color: red;
+        text-align: left;
     }
+    .random {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 15px;
+        text-transform: none;
+        padding: 10px 0;
+    }
+    .bottomLeftRandom p {
+        border-top: 1px solid red;
+        padding: 15px 0;
+    }
+    .random {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    #moreRandom {
+        margin: 20px 0;
+        border: 1px solid #e5e5e5;
+        padding: 5px;
+        text-align: center;
+    }
+    #moreRandom a {
+        font-size: 12px;
+    }
+    /* .random > * {
+        display: inline-block;
+        float: right;
+    } */
     .otherAnecdotes {
         grid-area: otherAnecdotes;
     }
