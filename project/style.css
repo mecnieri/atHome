@@ -26,7 +26,10 @@ html {
         margin: 0 auto;
         background-color: lightgray;
     }
-    .table{
+    .table {
         grid-column-start: 2;
+        display: grid;
+        grid-template-columns: minmax(150px, max-content) repeat(300, 100px);
+        overflow-x: auto; 
     }
 }
