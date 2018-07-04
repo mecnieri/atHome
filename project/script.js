@@ -25,27 +25,28 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
         console.log(a);
     }
     
-    
+      //#region getting date 
+     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
      
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
-    let apr = new Date(2018, 3, 29 + a, )
+     let apr = new Date(2018, 3, 29 + a, )
+      
+     let day = days[apr.getDay()];
+     let date = apr.getDate();
+     let month = months[apr.getMonth()];
+         
+     let newdate = day + " " + month + " " + date;
      
-    let day = days[apr.getDay()];
-    let date = apr.getDate();
-    let month = months[apr.getMonth()];
-    
-    
-    let newdate = day + " " + month + " " + date;
+      
+     //#endregion 
+   
 
     function name(arg) {
         
         let grandParentClass = document.querySelector(arg.grandParentSelector);
         let parentNode = document.createElement(arg.parentTagName);
-        // grandParentClass.appendChild(parentNode).setAttribute(arg.pAttName, arg.pAttValue + a);
-        grandParentClass.appendChild(parentNode).setAttribute(arg.pAttName, previousSibling());
-        
+        grandParentClass.appendChild(parentNode).setAttribute(arg.pAttName, arg.pAttValue + a);
+         
         for (let i = 0; i < arg.count; i++) {
             
             let parentId = document.querySelector(".table").lastElementChild;
@@ -66,14 +67,14 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
 });
 
 document.getElementById("removeDay").addEventListener("click", function () {
+    a--;
     
     // Removes an element from the document
         while (a % 7 == 1 || a % 7 == 3 || a % 7 == 5 || a % 7 == 6) {
          a--;
-         console.log(a);
-     }
-   let element = document.querySelector(".table").lastElementChild;
-   element.parentNode.removeChild(element);
-   a--;
-
+        }
+        let element = document.querySelector(".table").lastElementChild;
+        element.parentNode.removeChild(element);
+        
+        console.log(a);
 });
