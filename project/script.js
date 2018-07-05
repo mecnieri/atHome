@@ -14,17 +14,17 @@ let params = {
     pAttValue: "trainingDay ",
 
     elementTagName: "div",
-    // content: "0",
     attName: "class",
     attValue: "green",
-    count: 15,
+    count: 16,
 }
 
 document.getElementById("addDaybutton").addEventListener("click", function () {
 
+    a++;
+     
+     //#region date 
 
-    a++
-    
     if (a % 4 == 1 || a % 4 == 2 || a % 4 == 3) {
         b += 2;
     }
@@ -37,27 +37,24 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
     let day = days[apr.getDay()];
     let date = apr.getDate();
     let month = months[apr.getMonth()];
-    let newdate = day + " " + month + " " + date;
+    let newdate = day + " </br> " + month + " " + date;
 
-    console.log(newdate);
-    console.log(apr.getDay());
-
+ 
     //#endregion 
 
 
-    function name(arg) {
+    function addingColumn(arg) {
         
         let grandParentClass = document.querySelector(arg.grandParentSelector);
         let parentNode = document.createElement(arg.parentTagName);
         grandParentClass.appendChild(parentNode).setAttribute(arg.pAttName, arg.pAttValue + a);
 
-        console.log(document.querySelector(".table").lastElementChild.id + a);
-
+ 
         for (let i = 0; i < arg.count; i++) {
 
             let parentId = document.querySelector(".table").lastElementChild;
             let elementNode = document.createElement(arg.elementTagName);
-            let elementText = document.createTextNode(i);
+            let elementText = document.createTextNode("0");
             parentId.appendChild(elementNode).setAttribute(arg.attName, arg.attValue + i);
             elementNode.appendChild(elementText);
         }
@@ -65,7 +62,7 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
         document.getElementById(arg.pAttValue + a).firstChild.innerHTML = newdate;
 
     }
-    name(params);
+    addingColumn(params);
 
 
  

@@ -30,6 +30,17 @@ html {
         grid-column-start: 2;
         display: grid;
         grid-template-columns: minmax(150px, max-content) repeat(300, 100px);
-        overflow-x: auto; 
+        overflow-x: auto;
+    }
+    .table>div>div {
+        border: 2px solid black;
+        text-align: center;
+
+    }
+
+    #student0,
+    #av0{
+        height: 40px;
+        line-height: 40px;
     }
 }
