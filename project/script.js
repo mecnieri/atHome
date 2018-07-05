@@ -94,3 +94,20 @@ document.getElementById("removeDay").addEventListener("click", function () {
 
     console.log(a);
 });
+
+
+
+function averageFunc(elmnt, x) {
+    elmnt.innerHTML = x;
+
+    let sum = 0;
+    
+    for (let j = 1; j < a; j++) {
+      
+        sum += Number(document.getElementById("student_TrnDay_2_" + j ).textContent);
+        average = sum / j;
+    }
+     console.log(sum);
+     console.log(average);
+     document.getElementById("av1").innerHTML = average;
+}
