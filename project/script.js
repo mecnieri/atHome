@@ -3,7 +3,9 @@ let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 
 let a = 0;
 let b = 0;
+let totalDays = a;
 
+document.getElementById("removeDay").disabled = true;
 
 
 let params = {
@@ -47,6 +49,7 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
 
         let grandParentClass = document.querySelector(arg.grandParentSelector);
         let parentNode = document.createElement(arg.parentTagName);
+
         grandParentClass.appendChild(parentNode).setAttribute(arg.pAttName, arg.pAttValue + a);
 
 
@@ -56,58 +59,126 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
             let elementNode = document.createElement(arg.elementTagName);
             let elementText = document.createTextNode("0");
             parentId.appendChild(elementNode).setAttribute(arg.attName, arg.attValue + i + "_" + a);
+            elementNode.setAttribute("onclick", "averageFunc(this, Number(prompt('Please, enter number here')))");
+            elementNode.style.background = "red"
             elementNode.appendChild(elementText);
         }
 
         document.getElementById(arg.pAttValue + a).firstChild.innerHTML = newdate;
+        document.getElementById(arg.pAttValue + a).firstChild.style.background = "silver";
+        document.getElementById("totalDays").innerHTML = "Total Days &emsp;&emsp;&emsp;" + a;
 
     }
     addingColumn(params);
 
 
+    document.getElementById("removeDay").disabled = false;
 
 });
 
 document.getElementById("removeDay").addEventListener("click", function () {
+    if (a > 0) {
+        // Removes an element from the document
+        if (a % 4 == 1 || a % 4 == 2 || a % 4 == 3) {
+            b -= 2;
+        }
 
-    // Removes an element from the document
-    if (a % 4 == 1 || a % 4 == 2 || a % 4 == 3) {
-        b -= 2;
+        else if (a % 4 == 0) {
+            b--;
+        }
+
+        a--;
+        let element = document.querySelector(".table").lastElementChild;
+        element.parentNode.removeChild(element);
+        document.getElementById("totalDays").innerHTML = "Total Days &emsp;&emsp;&emsp;" + a;
+    }
+    if (a == 0) {
+        document.getElementById("removeDay").disabled = true;
+    }
+});
+
+function averageFunc(elmnt, todaysResult) {
+    if (todaysResult > 5) {
+        elmnt.innerHTML = 5;
+        elmnt.style.background = "silver";
+
+        // if students result for current day is from 0, till 5, write rounded result.
+    } else if (todaysResult <= 5 && todaysResult >= 0) {
+        elmnt.innerHTML = (Math.round(todaysResult));
+        elmnt.style.background = "silver";
+
+    }
+    //if students result for current day is belou 0, write 0. 
+    else {
+        elmnt.innerHTML = 0;
     }
 
-    else if (a % 4 == 0) {
-        b--;
+    missedLesson = 0;
+
+    for (let k = 1; k <= 15; k++) {
+        let sum = 0;
+        let average = 0;
+        for (let j = 1; j <= a; j++) {
+
+            sum += Number(document.getElementById("student_TrnDay_" + k + "_" + j).innerHTML);
+            average = sum / j;
+            document.getElementById("av" + k).innerHTML = parseFloat(Math.round(average * 10) / 10);
+
+            if (Number(document.getElementById("student_TrnDay_" + k + "_" + j).innerHTML) == 0) {
+                missedLesson++;
+            }
+
+        }
+    }
+    document.getElementById("missedLessons").innerHTML = "Missed Lessons &emsp;" + missedLesson;
+
+
+    let sumAverage = 0;
+    for (let v = 1; v <= 15; v++) {
+        sumAverage += Number(document.getElementById("av" + v).innerHTML)
+        averageAverage = parseFloat(Math.round((sumAverage / 15) * 100) / 100);
     }
 
-    let apr = new Date(2018, 3, 28 + b, )
-    let day = days[apr.getDay()];
-    let date = apr.getDate();
-    let month = months[apr.getMonth()];
-    let newdate = day + " " + month + " " + date;
+    document.getElementById("averageMark").innerHTML = "Average Mark  &emsp; &nbsp;" + averageAverage;
 
-    // console.log(b);
-    console.log(newdate);
-    console.log(apr.getDay());
-    a--;
-    let element = document.querySelector(".table").lastElementChild;
-    element.parentNode.removeChild(element);
 
-    console.log(a);
+}
+
+
+document.getElementById("update").addEventListener("click", function () {
+    missedLesson = 0;
+
+    for (let k = 1; k <= 15; k++) {
+        let sum = 0;
+        let average = 0;
+        for (let j = 1; j <= a; j++) {
+
+            sum += Number(document.getElementById("student_TrnDay_" + k + "_" + j).innerHTML);
+            average = sum / j;
+            document.getElementById("av" + k).innerHTML = parseFloat(Math.round(average * 10) / 10);
+
+            if (Number(document.getElementById("student_TrnDay_" + k + "_" + j).innerHTML) == 0) {
+                missedLesson++;
+            }
+
+        }
+    }
+    document.getElementById("missedLessons").innerHTML = "Missed Lessons &emsp;" + missedLesson;
+
+
+    let sumAverage = 0;
+    for (let v = 1; v <= 15; v++) {
+        sumAverage += Number(document.getElementById("av" + v).innerHTML)
+        averageAverage = parseFloat(Math.round((sumAverage / 15) * 100) / 100);
+    }
+
+    document.getElementById("averageMark").innerHTML = "Average Mark  &emsp; &nbsp;" + averageAverage;
+
+
 });
 
 
-
-function averageFunc(elmnt, x) {
-    elmnt.innerHTML = x;
-
-    let sum = 0;
-    
-    for (let j = 1; j < a; j++) {
-      
-        sum += Number(document.getElementById("student_TrnDay_2_" + j ).textContent);
-        average = sum / j;
-    }
-     console.log(sum);
-     console.log(average);
-     document.getElementById("av1").innerHTML = average;
-}
+// document.getElementById("averageMark").innerHTML = "Average Mark  &emsp; &nbsp;" + averageAverage;
+// console.log(averageAverage);
+// console.log(missedLesson);
+// document.getElementById("missedLessons").innerHTML = "Missed Lessons &emsp;" + missedLesson;
