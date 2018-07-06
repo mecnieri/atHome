@@ -48,7 +48,7 @@ html {
     }
     .table {
         display: grid;
-        grid-template-columns: minmax(150px, max-content) repeat(300, 100px);
+        grid-template-columns: minmax(180px, max-content) repeat(300, 100px);
         overflow-x: auto;
     }
     .table>div>div {
