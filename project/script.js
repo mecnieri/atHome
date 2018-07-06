@@ -100,12 +100,12 @@ document.getElementById("removeDay").addEventListener("click", function () {
 function averageFunc(elmnt, todaysResult) {
     if (todaysResult > 5) {
         elmnt.innerHTML = 5;
-        elmnt.style.background = "silver";
+        elmnt.style.background = "green";
 
         // if students result for current day is from 0, till 5, write rounded result.
     } else if (todaysResult <= 5 && todaysResult >= 0) {
         elmnt.innerHTML = (Math.round(todaysResult));
-        elmnt.style.background = "silver";
+        elmnt.style.background = "green";
 
     }
     //if students result for current day is belou 0, write 0. 
