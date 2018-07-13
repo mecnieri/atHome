@@ -8,21 +8,32 @@
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="https://www.shareicon.net/data/128x128/2015/09/20/104334_avatar_512x512.png"> -->
     <link rel="stylesheet" href="style.css">
     <title>Hi there... yes, I'm ninja</title>
+    <style>
+        @-moz-document url-prefix() {
+            #student0,
+            #av0 {
+                height: 48px;
+                line-height: 40px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="header"><h1>Techub Front-end Development Course</h1></div>
-        
+        <div class="header">
+            <h1>Techub Front-end Development Course</h1>
+        </div>
+
         <div class="menu">
-            
+
             <button id="addDaybutton">Add Day</button>
             <button id="removeDay">Remove Day</button>
             <button id="update">Update Info</button>
-            
-            
+
+
         </div>
-        
+
         <div class="aside">
             <nav class="stats">
                 <H2>Statistic of Students Results</H2>
@@ -30,7 +41,7 @@
                     <li id="totalDays">Total Days</li>
                     <li id="missedLessons">Missed Lessons</li>
                     <li id="averageMark">Average mark</li>
-                    <li>Total Students &emsp; &nbsp;      15</li>
+                    <li>Total Students &emsp; &nbsp; 15</li>
                 </ul>
             </nav>
         </div>
@@ -112,7 +123,7 @@
                 <div id="av15">0</div>
             </div>
 
-            
+
 
 
 
