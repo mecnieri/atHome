@@ -1,3 +1,5 @@
+//#region declaring parameters
+
 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -25,6 +27,10 @@ let params = {
     count: 16,
 }
 
+//#endregion 
+
+//#region add day 
+
 document.getElementById("addDaybutton").addEventListener("click", function () {
     // when add day button is clicked, total days increases by 1 
     a++;
@@ -51,39 +57,50 @@ document.getElementById("addDaybutton").addEventListener("click", function () {
 
 
     function addingColumn(arg) {
-
+        // selecting div .table 
         let grandParentClass = document.querySelector(arg.grandParentSelector);
+        // creating div (new column)
         let parentNode = document.createElement(arg.parentTagName);
-
+        //  putting new div in .table and setting ID trainingDay + number of days 
         grandParentClass.appendChild(parentNode).setAttribute(arg.pAttName, arg.pAttValue + a);
 
-
+        // creating 16 childs (boxes) 
+        // "i" is number of student
         for (let i = 0; i < arg.count; i++) {
-
+            // parent always must be the last column of ".table"
             let parentId = document.querySelector(".table").lastElementChild;
             let elementNode = document.createElement(arg.elementTagName);
+            // default input is "0"
             let elementText = document.createTextNode("0");
+            // setting boxes id with students number and days number 
             parentId.appendChild(elementNode).setAttribute(arg.attName, arg.attValue + i + "_" + a);
+            // prompt function for every box 
             elementNode.setAttribute("onclick", "averageFunc(this, Number(prompt('Please, enter number here')))");
             elementNode.style.background = "red"
             elementNode.appendChild(elementText);
         }
-
+        // putting date in first box 
         document.getElementById(arg.pAttValue + a).firstChild.innerHTML = newdate;
         document.getElementById(arg.pAttValue + a).firstChild.style.background = "silver";
+        // counting total days 
         document.getElementById("totalDays").innerHTML = "Total Days &emsp;&emsp;&emsp;" + a;
 
     }
     addingColumn(params);
 
-
+    // we have already created a column, so remove day button now is enabled
     document.getElementById("removeDay").disabled = false;
 
 });
 
+//#endregion 
+
+//#region remove day 
+
 document.getElementById("removeDay").addEventListener("click", function () {
+    // Removes an element from the document, if we have already created at least one
     if (a > 0) {
-        // Removes an element from the document
+        // decreasing date
         if (a % 4 == 1 || a % 4 == 2 || a % 4 == 3) {
             b -= 2;
         }
@@ -93,48 +110,59 @@ document.getElementById("removeDay").addEventListener("click", function () {
         }
 
         a--;
+        // removing last child of ".table"
         let element = document.querySelector(".table").lastElementChild;
         element.parentNode.removeChild(element);
+        // decreasing total days number
         document.getElementById("totalDays").innerHTML = "Total Days &emsp;&emsp;&emsp;" + a;
     }
     if (a == 0) {
+        // if we remove all days, remove day button disables 
         document.getElementById("removeDay").disabled = true;
     }
 });
 
+//#endregion 
+
+//#region inputing results and counting statistics 
+
 function averageFunc(elmnt, todaysResult) {
+    // if students resuld is above 5, input will be 5 
     if (todaysResult > 5) {
         elmnt.innerHTML = 5;
         elmnt.style.background = "green";
 
-        // if students result for current day is from 0, till 5, write rounded result.
+        // if students result for current day is from 0, till 5, writes rounded result.
     } else if (todaysResult <= 5 && todaysResult >= 0) {
         elmnt.innerHTML = (Math.round(todaysResult));
         elmnt.style.background = "green";
 
     }
-    //if students result for current day is belou 0, write 0. 
+    //if students result for current day is below 0, writes 0. 
     else {
         elmnt.innerHTML = 0;
     }
 
     missedLesson = 0;
 
+    // k is a students number 
     for (let k = 1; k <= 15; k++) {
         let sum = 0;
         let average = 0;
+        // j is a day number
         for (let j = 1; j <= a; j++) {
-
+            // counting sum of students every day result
             sum += Number(document.getElementById("student_TrnDay_" + k + "_" + j).innerHTML);
             average = sum / j;
+            // rounding average by decimals 
             document.getElementById("av" + k).innerHTML = parseFloat(Math.round(average * 10) / 10);
-
+            // counting zeros, so missed days 
             if (Number(document.getElementById("student_TrnDay_" + k + "_" + j).innerHTML) == 0) {
                 missedLesson++;
             }
-
         }
     }
+
     document.getElementById("missedLessons").innerHTML = "Missed Lessons &emsp;" + missedLesson;
 
 
@@ -149,6 +177,9 @@ function averageFunc(elmnt, todaysResult) {
 
 }
 
+//#endregion 
+
+//#region updating statistics 
 
 document.getElementById("update").addEventListener("click", function () {
     missedLesson = 0;
@@ -181,3 +212,5 @@ document.getElementById("update").addEventListener("click", function () {
 
 
 });
+
+//#endregion 
