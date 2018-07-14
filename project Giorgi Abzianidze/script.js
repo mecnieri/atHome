@@ -5,16 +5,20 @@ let a = 0;
 let b = 0;
 let totalDays = a;
 
+// remove day button disabled 
 document.getElementById("removeDay").disabled = true;
 
-
+// parameteres needed for creating new column in table 
 let params = {
+    // new column must be created in div .table
     grandParentSelector: ".table",
 
+    //parameters for new column (new div) with id="trainingDay " + day number  
     parentTagName: "div",
     pAttName: "id",
     pAttValue: "trainingDay ",
 
+    //parameters for 16 new box, in column
     elementTagName: "div",
     attName: "id",
     attValue: "student_TrnDay_",
@@ -22,11 +26,12 @@ let params = {
 }
 
 document.getElementById("addDaybutton").addEventListener("click", function () {
-
+    // when add day button is clicked, total days increases by 1 
     a++;
 
     //#region date 
 
+    // b is needed to count exact date  
     if (a % 4 == 1 || a % 4 == 2 || a % 4 == 3) {
         b += 2;
     }
@@ -176,9 +181,3 @@ document.getElementById("update").addEventListener("click", function () {
 
 
 });
-
-
-// document.getElementById("averageMark").innerHTML = "Average Mark  &emsp; &nbsp;" + averageAverage;
-// console.log(averageAverage);
-// console.log(missedLesson);
-// document.getElementById("missedLessons").innerHTML = "Missed Lessons &emsp;" + missedLesson;
