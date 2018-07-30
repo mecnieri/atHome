@@ -1,46 +1,28 @@
-let  me = {
-    saxeli : "giorgi",
-    gvari : "abzianidze",
-    swavla(){
-        console.log("me vswavlob");
-    }
-}
+let a = prompt("Type two words and I will tell you, are they anagrams or not ? \nPlease, type here first word")
+let b = a.split("")
+let c = b.sort()
 
-me.saxeli
+console.log(c.length);
+let d = prompt("Type here second word")
+let e = d.split("")
+let f = e.sort()
+f
+console.log(d.length);
+let x = 0;
+if (a.length === d.length) {
 
-let me = {
-    "saxeli": "giorgi",
-    "gvari": "abzianidze",
-    mimateba() {
-        return 5 + 2
-    }
-}
-
-me //?
-me.saxeli //?
-typeof me.saxeli //?
-typeof me //?
-me.mimateba //?
-typeof me.mimateba //?
-
-me.mimateba() //?
-typeof me.mimateba() //?
-
-
-let a = "a"
-let a2 = a.split("")
-a2
-
-
-let b = "gama"
-let b2 = b.split("")
-b2
-
-for (let i = 0; i < a2.length; i++) {
-
-    for (let j = 0; j < b2.length; j++) {
-        if (a2[i] === b2[j]) {
-            console.log(a2[i]);
+    for (let i = 0; i < c.length; i++) {
+        if (c[i] === f[i]) {
+            x++
+            x
+        } else {
+            alert(`sorry, "${a}" and "${d}" are NOT anagrams !`);
         }
     }
+}
+else {
+    alert(`sorry, "${a}" and "${d}" are NOT anagrams !`);
+}
+if(x === a.length){
+    alert(`CONGRATS! "${a}" and "${d}" are anagrams !`)
 }
