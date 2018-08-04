@@ -23,11 +23,9 @@ function Calculator() {
     }
 }
 
-alert("Da")
-
 let powerCalc = new Calculator()
 
 powerCalc.addOperator("*", (a, b) => a * b);
 powerCalc.addOperator("/", (a, b) => a / b);
 powerCalc.addOperator("**", (a, b) => a ** b)
-powerCalc.calculate("3 / 4");
+powerCalc.calculate("3 * 4");
