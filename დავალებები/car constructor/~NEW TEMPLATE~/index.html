@@ -9,7 +9,29 @@
     <title>Hi there... yes, I'm ninja</title>
 </head>
 <body>
-    
+    function Car() {<br>
+    this.setName = function (setName) {<br>
+        this.setName = setName;<br>
+        return this;<br>
+    };<br>
+    this.setColor = function (last) {<br>
+        this.setColor = last;<br>
+        return this;<br>
+    };<br>
+    this.setBrand = function (age) {<br>
+        this.setBrand = age<br>
+        return this;<br>
+    };<br>
+    this.save = function (eyeColor) {<br>
+        this.save = eyeColor<br>
+        return this;<br>
+    };<br>
+}<br>
+
+let ford = new Car().setName("Ford").setColor("red").setBrand("Focus").save()<br>
+
+
+console.log(ford);<br>
     <script src="script.js"></script>
 </body>
 </html>
