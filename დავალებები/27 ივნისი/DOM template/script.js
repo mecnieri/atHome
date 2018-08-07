@@ -1,9 +1,8 @@
-
 let params = {
-    count: 2,
     tagName: "h2",
-    parentSelector: "#para4",
     content: "obieqtidan h2 is damateba",
+    count: 8,
+    parentSelector: "#para4",
     childCount: "para4",
 }
 
@@ -18,15 +17,15 @@ function name(arg) {
         let parentId = document.querySelector(arg.parentSelector);
 
 
-        parentId.appendChild(elementNode);
         elementNode.appendChild(elementText);
-
+        parentId.appendChild(elementNode);
     }
-    var c = document.getElementById(arg.childCount).childElementCount;
-    document.getElementById("demo").innerHTML = c;
+  
+    let count = document.getElementById(arg.childCount).childElementCount;
+    document.getElementById("demo").innerHTML = count;
 
-    document.getElementsByTagName("H2")[0].setAttribute("id", "gawitleba").setAttribute("class", "gawitleba");
-
+    document.getElementsByTagName("h2")[1].setAttribute("id", "gawitleba");
+    console.log(document.getElementsByTagName("h2"))
 }
 
 
