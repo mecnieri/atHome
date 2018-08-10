@@ -5,7 +5,6 @@ let c = prompt("Type here second word")
 let d = c.split("").sort()
 
 let countCoincidence = 0;
-
 if (a.length === c.length) {
     for (let i = 0; i < a.length; i++) {
         if (b[i] === d[i]) {
