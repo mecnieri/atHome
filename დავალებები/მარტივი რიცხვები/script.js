@@ -5,7 +5,7 @@ let lastNumber = Number(prompt("insert last number here"));
 let totalPrimeNumbers = 0;
 for (let x = firstNumber; x <= lastNumber; x++) {
     let b = 0;
-    for (let i = 0; i < x + 1; i++) {
+    for (let i = 0; i <= x ; i++) {
 
         if (x % i == 0) {
             b++;
